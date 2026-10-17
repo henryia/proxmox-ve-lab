@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Henry Anchante's infrastructure engineering portfolio. VMware, Proxmox VE, Linux, virtualization and data center operations.">
+  <title>Henry Anchante | Infrastructure Engineering</title>
+  <style>
+    :root {
+      --bg: #0d1420;
+      --panel: #152131;
+      --line: #29384a;
+      --text: #edf2f7;
+      --muted: #a5b3c4;
+      --accent: #ef873b;
+      --max: 1060px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .container { max-width: var(--max); margin: auto; padding: 0 25px; }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #101a28;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 76px;
+      gap: 20px;
+    }
+    .brand { font-size: 18px; font-weight: 700; text-decoration: none; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero { padding: 95px 0 75px; }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.12; margin: 18px 0; }
+    .hero p { max-width: 730px; font-size: 18px; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-block;
+      padding: 11px 19px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .button.primary { background: var(--accent); border-color: var(--accent); color: #101820; }
+    .button:hover { opacity: .85; }
+
+    section { padding: 58px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 27px; margin: 0 0 18px; }
+    h3 { margin: 0 0 10px; font-size: 18px; }
+    .intro { color: var(--muted); max-width: 790px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+    .card {
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+    }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .tag {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .spec { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+    .details { color: var(--muted); }
+    .details strong { color: var(--text); }
+
+    .architecture {
+      margin-top: 25px;
+      padding: 30px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      text-align: center;
+    }
+    .architecture .layer {
+      max-width: 640px;
+      margin: 10px auto;
+      padding: 15px;
+      border: 1px solid #405166;
+      border-radius: 5px;
+      background: #1c2b3d;
+    }
+    .architecture .arrow { color: var(--accent); font-size: 23px; }
+    .nodes { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .node {
+      flex: 1;
+      min-width: 120px;
+      padding: 12px;
+      border: 1px solid var(--accent);
+      border-radius: 5px;
+    }
+    .node small { display: block; color: var(--muted); }
+
+    .status { color: var(--accent); font-size: 13px; font-weight: 700; }
+    .project-link { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .project-link:hover { text-decoration: underline; }
+    footer { padding: 35px 0; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+    @media (max-width: 750px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 18px 0; }
+      .nav-links { gap: 14px; }
+      .hero { padding: 65px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .architecture { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#">Henry <span>Anchante</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#lab">Infrastructure Lab</a>
+        <a href="#projects">Projects</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Infrastructure & Virtualization Engineering</div>
+      <h1>Building and managing<br>reliable IT infrastructure.</h1>
+      <p>
+        I'm Henry Anchante, a Senior Infrastructure and Virtualization Engineer
+        with over 20 years of experience working with enterprise servers,
+        data center infrastructure, VMware virtualization and Linux systems.
+        My current work includes Proxmox VE, private cloud environments
+        and infrastructure automation.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#lab">Explore My Lab</a>
+        <a class="button" href="https://github.com/henryia" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+        <a class="button" href="https://www.linkedin.com/in/henryanchantecastro/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="intro">
+        My background is rooted in hands-on infrastructure engineering:
+        deploying physical servers, configuring VMware environments,
+        managing Windows Server and Linux systems, maintaining enterprise
+        storage, and troubleshooting production infrastructure.
+      </p>
+      <p class="intro">
+        I hold the VMware Certified Professional 5 - Data Center Virtualization
+        (VCP5-DCV) credential, awarded in 2013. Today I continue expanding
+        my practical work with Proxmox VE, open-source infrastructure,
+        automation and AI-assisted operations.
+      </p>
+      <p class="intro">
+        Based in Brandon, Florida. Founder of My Support 365.
+      </p>
+    </div>
+  </section>
+
+  <section id="lab">
+    <div class="container">
+      <h2>My Infrastructure Lab</h2>
+      <p class="intro">
+        A dedicated environment for testing virtualization, Linux,
+        clustering, storage and infrastructure automation.
+        The lab runs on an HP Z640 workstation with VMware ESXi 8.0
+        and three nested Proxmox VE nodes.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <span class="tag">PROXMOX NODE 01</span>
+          <div class="spec">PVE1</div>
+          <p>6 vCPU · 12 GB RAM · 20 GB disk</p>
+        </div>
+        <div class="card">
+          <span class="tag">PROXMOX NODE 02</span>
+          <div class="spec">PVE2</div>
+          <p>6 vCPU · 8 GB RAM · 20 GB disk</p>
+        </div>
+        <div class="card">
+          <span class="tag">PROXMOX NODE 03</span>
+          <div class="spec">PVE3</div>
+          <p>8 vCPU · 8 GB RAM · 20 GB disk</p>
+        </div>
+      </div>
+
+      <div class="architecture">
+        <h3>Lab Architecture</h3>
+        <div class="layer">HP Z640 Workstation</div>
+        <div class="arrow">↓</div>
+        <div class="layer">VMware ESXi 8.0</div>
+        <div class="arrow">↓</div>
+        <div class="nodes">
+          <div class="node">PVE1<small>6 vCPU / 12 GB</small></div>
+          <div class="node">PVE2<small>6 vCPU / 8 GB</small></div>
+          <div class="node">PVE3<small>8 vCPU / 8 GB</small></div>
+        </div>
+        <p class="details">
+          Nested virtualization lab for hands-on engineering and testing.
+          All nodes share the same physical host.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Technical Projects</h2>
+      <p class="intro">
+        Documenting real configurations, procedures, testing results
+        and lessons learned as each phase is completed.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">CURRENT LAB</span>
+          <h3>Proxmox VE on ESXi 8.0</h3>
+          <p>Three nested Proxmox VE servers provisioned for infrastructure experiments.</p>
+          <p><a class="project-link" href="https://github.com/henryia/proxmox-ve-lab">View documentation →</a></p>
+        </div>
+        <div class="card">
+          <span class="status">PLANNED</span>
+          <h3>Proxmox Clustering</h3>
+          <p>Cluster membership, quorum, node management and migration testing.</p>
+        </div>
+        <div class="card">
+          <span class="status">PLANNED</span>
+          <h3>ZFS & Ceph Storage</h3>
+          <p>Storage pools, replication, fault simulation and recovery exercises.</p>
+        </div>
+        <div class="card">
+          <span class="status">PLANNED</span>
+          <h3>Linux Administration</h3>
+          <p>System services, networking, storage, logs and troubleshooting procedures.</p>
+        </div>
+        <div class="card">
+          <span class="status">PLANNED</span>
+          <h3>Backup & Recovery</h3>
+          <p>Backup procedures, restore testing and disaster recovery documentation.</p>
+        </div>
+        <div class="card">
+          <span class="status">PLANNED</span>
+          <h3>AI-Assisted Operations</h3>
+          <p>Supervised automation, monitoring and infrastructure management workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="container">
+      <h2>Credentials & Training</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">VMWARE · SEPTEMBER 2013</span>
+          <h3>VMware Certified Professional 5</h3>
+          <p>Data Center Virtualization (VCP5-DCV)</p>
+        </div>
+        <div class="card">
+          <span class="tag">VMWARE EDUCATION · JUNE 2013</span>
+          <h3>VMware vSphere 5.1</h3>
+          <p>Install, Configure, Manage — Certificate of Completion</p>
+        </div>
+        <div class="card">
+          <span class="tag">VMWARE EDUCATION · SEPTEMBER 2014</span>
+          <h3>VMware Site Recovery Manager 5.1</h3>
+          <p>Install, Configure, Manage — Certificate of Completion</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Connect</h2>
+      <p class="intro">
+        Interested in virtualization, Linux infrastructure, Proxmox VE,
+        data center engineering or technical consulting?
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://www.linkedin.com/in/henryanchantecastro/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        <a class="button" href="https://github.com/henryia" target="_blank" rel="noopener noreferrer">View GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    Henry Anchante · Infrastructure & Virtualization Engineering · Brandon, Florida
+  </div>
+</footer>
+
+</body>
+</html>
