@@ -47,3 +47,29 @@ The objective is to explore enterprise virtualization, Linux administration, Pro
 ## Professional Purpose
 
 This project is part of my public infrastructure engineering portfolio, documenting practical technical work, configuration procedures, troubleshooting, and lessons learned.
+
+## Proxmox VE Cluster with Ceph Distributed Storage
+
+**Project: MS365-Lab | My Support 365**
+
+Built a three-node Proxmox VE cluster with Ceph distributed storage in a nested VMware ESXi 8.0 lab environment.
+
+### Infrastructure
+
+- 3 Proxmox VE nodes: PVE1, PVE2 and PVE3
+- 3 Ceph monitors with established quorum
+- 1 active Ceph manager and 2 standby managers
+- 6 BlueStore OSDs, 2 per node
+- 100 GiB per OSD, totaling 600 GiB of raw capacity
+- Dedicated Ceph pool: `academy-ceph`
+- Ceph health reported as `HEALTH_OK`
+
+### Engineering Focus
+
+This lab demonstrates hands-on experience with virtualization, cluster membership, quorum, distributed storage configuration, OSD management and Ceph monitoring.
+
+All three Proxmox nodes run as nested virtual machines on a single physical HP Z640 server. The environment is intended for technical learning and testing, not physical host-level fault tolerance.
+
+### Next Steps
+
+Validate storage operations, test virtual machine provisioning, examine Ceph recovery behavior and document performance and failure scenarios.
